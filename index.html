@@ -1,0 +1,357 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Iuri Von Helde — Portfólio</title>
+<meta name="description" content="Desenvolvedor Fullstack — DB Barbershop, Instant Replay, automação de NFS-e, Hortifruti Vieira e Padaria Laura.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&family=Inter:wght@400;500&display=swap">
+<style>
+  :root { color-scheme: dark; }
+  * { box-sizing: border-box; }
+  html { scroll-snap-type: y proximity; scroll-behavior: smooth; }
+  body { margin: 0; background: #06070A; font-family: 'Inter', system-ui, sans-serif; color: #F2F4F7; }
+  a { color: inherit; text-decoration: none; }
+  .h-font { font-family: 'Space Grotesk', system-ui, sans-serif; }
+  .m-font { font-family: 'JetBrains Mono', monospace; }
+  .panel { position: relative; min-height: 100vh; box-sizing: border-box; scroll-snap-align: start; display: flex; flex-direction: column; justify-content: flex-end; overflow: hidden; }
+  .cover-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .frame { display: block; width: 100%; border-radius: 10px; box-shadow: 0 30px 60px -20px rgba(0,0,0,0.7); }
+  .tag { font-size: 11px; padding: 5px 12px; border: 1px solid rgba(255,255,255,0.16); border-radius: 20px; color: rgba(255,255,255,0.78); background: rgba(255,255,255,0.05); display: inline-block; }
+  .dot { width: 9px; height: 9px; border-radius: 50%; border: 1px solid rgba(255,255,255,0.45); display: block; transition: background 0.15s; }
+  .dot-row:hover .dot { background: rgba(255,255,255,0.9); }
+  .dot-label { opacity: 0; transform: translateX(6px); transition: opacity 0.15s, transform 0.15s; white-space: nowrap; }
+  .dot-row:hover .dot-label { opacity: 1; transform: translateX(0); }
+  .cta-btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 22px; border-radius: 8px; font-weight: 600; font-size: 14px; }
+  .fact-card { padding: 22px 24px; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; }
+  .fact-label { font-size: 11px; letter-spacing: 0.08em; color: #6B7480; text-transform: uppercase; margin-bottom: 10px; }
+  .fact-body { font-size: 14px; color: #E2E6EA; line-height: 1.8; }
+  @media (max-width: 860px) {
+    .side-nav { display: none; }
+    .split-2col { flex-direction: column; gap: 32px !important; }
+    .panel h1 { font-size: 40px !important; }
+    .panel h2 { font-size: 32px !important; }
+    .inset-frame { position: static !important; width: 100% !important; margin-top: 24px; }
+  }
+</style>
+</head>
+<body>
+
+<div style="width: 100%;">
+
+  <!-- SIDE DOT NAV -->
+  <div class="side-nav" style="position: fixed; right: 28px; top: 50%; transform: translateY(-50%); z-index: 50; display: flex; flex-direction: column; gap: 16px;">
+    <a href="#hero" class="dot-row" style="display: flex; align-items: center; justify-content: flex-end; gap: 10px;"><span class="dot-label m-font" style="font-size: 11px; color: #C8CDD6;">topo</span><span class="dot"></span></a>
+    <a href="#sobre" class="dot-row" style="display: flex; align-items: center; justify-content: flex-end; gap: 10px;"><span class="dot-label m-font" style="font-size: 11px; color: #C8CDD6;">sobre mim</span><span class="dot"></span></a>
+    <a href="#db" class="dot-row" style="display: flex; align-items: center; justify-content: flex-end; gap: 10px;"><span class="dot-label m-font" style="font-size: 11px; color: #C8CDD6;">DB Barbershop</span><span class="dot"></span></a>
+    <a href="#replay" class="dot-row" style="display: flex; align-items: center; justify-content: flex-end; gap: 10px;"><span class="dot-label m-font" style="font-size: 11px; color: #C8CDD6;">Instant Replay</span><span class="dot"></span></a>
+    <a href="#nfse" class="dot-row" style="display: flex; align-items: center; justify-content: flex-end; gap: 10px;"><span class="dot-label m-font" style="font-size: 11px; color: #C8CDD6;">Automação NFS-e</span><span class="dot"></span></a>
+    <a href="#hortifruti" class="dot-row" style="display: flex; align-items: center; justify-content: flex-end; gap: 10px;"><span class="dot-label m-font" style="font-size: 11px; color: #C8CDD6;">Hortifruti Vieira</span><span class="dot"></span></a>
+    <a href="#padaria" class="dot-row" style="display: flex; align-items: center; justify-content: flex-end; gap: 10px;"><span class="dot-label m-font" style="font-size: 11px; color: #C8CDD6;">Padaria Laura</span><span class="dot"></span></a>
+    <a href="#contato" class="dot-row" style="display: flex; align-items: center; justify-content: flex-end; gap: 10px;"><span class="dot-label m-font" style="font-size: 11px; color: #C8CDD6;">contato</span><span class="dot"></span></a>
+  </div>
+
+  <!-- FIXED LOGO -->
+  <a href="#hero" style="position: fixed; left: 32px; top: 28px; z-index: 50;" class="h-font">
+    <span style="font-size: 15px; font-weight: 600; color: #F2F4F7;">Iuri Von Helde</span>
+  </a>
+
+  <!-- HERO -->
+  <div id="hero" class="panel" style="background: #06070A; justify-content: center; align-items: center;">
+    <canvas id="matrix-canvas" style="position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0.65;"></canvas>
+    <div style="position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 50%, transparent 30%, rgba(6,7,10,0.55) 75%, rgba(6,7,10,0.85) 100%);"></div>
+    <div style="position: relative; text-align: center; padding: 0 24px; max-width: 820px;">
+      <div class="m-font" style="font-size: 13px; letter-spacing: 0.1em; color: #00FF6A; text-transform: uppercase; margin-bottom: 22px; text-shadow: 0 0 12px rgba(0,255,106,0.5);">Desenvolvedor Fullstack · 6 anos de experiência</div>
+      <h1 class="h-font" style="font-size: 64px; line-height: 1.05; font-weight: 700; margin: 0 0 26px; color: #F8F9FB;">Sistemas que saem do papel e vão para produção.</h1>
+      <p style="font-size: 18px; line-height: 1.6; color: #9AA4B2; margin: 0 0 40px;">Cinco projetos reais — um app de assinaturas, uma plataforma de replay para campos de futebol, automação fiscal e duas landing pages de clientes. Role para ver cada um por dentro.</p>
+      <a href="#sobre" class="m-font" style="display: inline-flex; flex-direction: column; align-items: center; gap: 8px; color: #6B7480; font-size: 12px;">
+        <span>rolar</span>
+        <span style="font-size: 18px;">↓</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- SOBRE MIM -->
+  <div id="sobre" class="panel" style="justify-content: center; align-items: center; background: #08090C; padding: 96px 64px;">
+    <div style="position: absolute; inset: 0; background: radial-gradient(ellipse at 15% 15%, rgba(0,255,106,0.06), transparent 50%);"></div>
+    <div class="split-2col" style="position: relative; display: flex; gap: 72px; max-width: 1140px; width: 100%; align-items: flex-start; flex-wrap: wrap;">
+
+      <div style="flex: 1; min-width: 300px;">
+        <div class="m-font" style="width: 64px; height: 64px; border-radius: 50%; background: rgba(0,255,106,0.1); border: 1px solid rgba(0,255,106,0.4); color: #00FF6A; display: flex; align-items: center; justify-content: center; font-size: 18px; font-weight: 600; margin-bottom: 28px;">IVH</div>
+        <div class="m-font" style="font-size: 12px; letter-spacing: 0.08em; color: #6B7480; text-transform: uppercase; margin-bottom: 14px;">sobre mim</div>
+        <h2 class="h-font" style="font-size: 38px; font-weight: 700; margin: 0 0 20px; color: #F8F9FB;">Iuri Von Helde</h2>
+        <p style="font-size: 16px; line-height: 1.7; color: #C4CBD3; margin: 0 0 20px;">
+          Desenvolvedor Fullstack com 6 anos de experiência, atuando hoje em um ERP corporativo onde dividi a aplicação em módulos independentes com Module Federation, criei uma biblioteca de componentes reutilizáveis entre times e padronizei o Design System da casa. Também tenho 3 anos com React Native (app do jogo "Matrix the Code") e experiência implementando designs em Webflow.
+        </p>
+        <p style="font-size: 16px; line-height: 1.7; color: #C4CBD3; margin: 0 0 28px;">
+          Antes da programação, passei por laboratório e farmácia — Técnico em Química na Bayer Science Corp e Técnico em Farmácia (satélite de oncologia) no Into, Instituto de Trauma e Ortopedia. Já trabalhei em startup e é o ritmo que mais me identifica.
+        </p>
+        <div class="m-font" style="font-size: 13px; color: #8B94A0;">🌐 Português nativo · Inglês avançado · Espanhol fluente</div>
+      </div>
+
+      <div style="flex: 1; min-width: 300px; display: flex; flex-direction: column; gap: 14px;">
+
+        <div class="fact-card">
+          <div class="fact-label">Formação</div>
+          <div class="fact-body">
+            Engenharia de Software — FIAP<br>
+            Análise e Desenvolvimento de Sistemas — UVA<br>
+            Técnico em Química — Faculdade Mercúrio
+          </div>
+        </div>
+
+        <div class="fact-card">
+          <div class="fact-label">Certificações</div>
+          <div class="fact-body">
+            Ethical Hacker — IBSEC<br>
+            CyberSecurity — FIAP
+          </div>
+        </div>
+
+        <div class="fact-card">
+          <div class="fact-label">Trajetória</div>
+          <div class="fact-body">
+            Desenvolvedor Fullstack — desde então
+          </div>
+        </div>
+
+        <div class="fact-card">
+          <div class="fact-label">Contato</div>
+          <div class="fact-body m-font">
+            <a href="tel:+5521982721541" style="display: block; color: #E2E6EA;">+55 (21) 9 8272-1541</a>
+            <a href="mailto:iuri.dev.vonhelde@gmail.com" style="display: block; color: #E2E6EA;">iuri.dev.vonhelde@gmail.com</a>
+            <a href="https://www.linkedin.com/in/iuri-von-helde-082320261" style="display: block; color: #E2E6EA;">linkedin.com/in/iuri-von-helde</a>
+            <a href="https://github.com/iurivonhelde6-web" style="display: block; color: #E2E6EA;">github.com/iurivonhelde6-web</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- DB BARBERSHOP -->
+  <div id="db" class="panel" style="justify-content: flex-end; padding: 72px 64px;">
+    <img class="cover-img" src="images/db-hero.png" alt="">
+    <div style="position: absolute; inset: 0; background: linear-gradient(0deg, rgba(4,10,7,0.96) 0%, rgba(4,10,7,0.72) 38%, rgba(4,10,7,0.25) 68%, rgba(4,10,7,0.55) 100%);"></div>
+
+    <img class="frame inset-frame" src="images/db-ia-consultor.png" alt="Consultor de IA do DB Barbershop" style="position: absolute; top: 88px; right: 64px; width: 380px; border: 1px solid rgba(255,255,255,0.12);">
+    <div class="m-font" style="position: absolute; top: 340px; right: 64px; width: 380px; font-size: 11px; color: #B8C4BC; text-align: right;">↑ Consultor de IA (Gemini) integrado ao app</div>
+
+    <div style="position: relative; max-width: 620px;">
+      <div class="m-font" style="font-size: 12px; letter-spacing: 0.08em; color: #A9D3B8; text-transform: uppercase; margin-bottom: 14px;">em produção · clientes reais</div>
+      <h2 class="h-font" style="font-size: 46px; font-weight: 700; margin: 0 0 18px; color: #F8F9FB;">DB Barbershop</h2>
+      <p style="font-size: 16px; line-height: 1.65; color: #D3D9DE; margin: 0 0 24px;">
+        Clube de assinaturas para barbearia: checkout recorrente via Stripe, cartão de controle digital, agendamento por barbeiro com disponibilidade configurável, painel administrativo com KPIs e simulador de economia, e um consultor de IA que recomenda serviços e cortes por tipo de rosto.
+      </p>
+      <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 28px;">
+        <span class="tag m-font">React · Vite</span>
+        <span class="tag m-font">Node / Express</span>
+        <span class="tag m-font">Firebase</span>
+        <span class="tag m-font">Stripe</span>
+        <span class="tag m-font">Google Gemini</span>
+        <span class="tag m-font">Vercel</span>
+      </div>
+      <a href="https://www.ded-black.com.br" target="_blank" rel="noopener" class="cta-btn" style="background: #E8A33D; color: #14100A;">Ver o app ↗</a>
+    </div>
+  </div>
+
+  <!-- INSTANT REPLAY -->
+  <div id="replay" class="panel" style="justify-content: center; align-items: center; background: #0A0508;">
+    <div style="position: absolute; inset: 0; background: radial-gradient(ellipse at 75% 30%, rgba(255,45,85,0.16), transparent 55%);"></div>
+    <div class="h-font" style="position: absolute; right: -40px; bottom: -60px; font-size: 420px; font-weight: 700; color: rgba(255,45,85,0.05); line-height: 1; user-select: none;">15s</div>
+
+    <div style="position: relative; max-width: 760px; padding: 0 24px; text-align: center;">
+      <div class="m-font" style="font-size: 12px; letter-spacing: 0.08em; color: #FF6B87; text-transform: uppercase; margin-bottom: 16px;">infraestrutura de campo</div>
+      <h2 class="h-font" style="font-size: 44px; font-weight: 700; margin: 0 0 20px; color: #F8F9FB;">Instant Replay</h2>
+      <p style="font-size: 16px; line-height: 1.65; color: #C7C4C8; margin: 0 auto 40px; max-width: 620px;">
+        Plataforma de replay retroativo para campos de futebol, arenas e centros esportivos. A regra é rígida: o botão nunca inicia uma gravação — ele salva os <strong style="color: #FF6B87;">15 segundos que já aconteceram</strong> antes do lance.
+      </p>
+
+      <div style="display: flex; align-items: center; justify-content: center; gap: 0; margin: 0 auto 36px; max-width: 640px; flex-wrap: wrap;">
+        <div style="flex: 1; min-width: 140px; padding: 18px 14px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px;">
+          <div style="font-size: 22px; margin-bottom: 8px;">📡</div>
+          <div class="m-font" style="font-size: 12px; color: #E7E2E5;">Câmeras IP via RTSP</div>
+        </div>
+        <div class="m-font" style="padding: 0 12px; color: #5A5560; font-size: 16px;">→</div>
+        <div style="flex: 1; min-width: 140px; padding: 18px 14px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px;">
+          <div style="font-size: 22px; margin-bottom: 8px;">🔁</div>
+          <div class="m-font" style="font-size: 12px; color: #E7E2E5;">Buffer circular de 60s (FFmpeg)</div>
+        </div>
+        <div class="m-font" style="padding: 0 12px; color: #5A5560; font-size: 16px;">→</div>
+        <div style="flex: 1; min-width: 140px; padding: 18px 14px; background: rgba(255,45,85,0.1); border: 1px solid rgba(255,45,85,0.35); border-radius: 12px;">
+          <div style="font-size: 22px; margin-bottom: 8px;">⏺</div>
+          <div class="m-font" style="font-size: 12px; color: #FFB3C1;">Salva o replay retroativo</div>
+        </div>
+      </div>
+
+      <div style="display: flex; flex-wrap: wrap; gap: 8px; justify-content: center;">
+        <span class="tag m-font">Python · FastAPI</span>
+        <span class="tag m-font">FFmpeg</span>
+        <span class="tag m-font">React · TypeScript</span>
+        <span class="tag m-font">TanStack Query</span>
+        <span class="tag m-font">offline-first</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- NFS-e AUTOMATION -->
+  <div id="nfse" class="panel" style="justify-content: center; align-items: center; background: #050A09;">
+    <div style="position: absolute; inset: 0; background: radial-gradient(ellipse at 25% 70%, rgba(45,212,150,0.14), transparent 55%);"></div>
+
+    <div class="split-2col" style="position: relative; display: flex; align-items: center; gap: 64px; max-width: 1080px; padding: 0 24px; flex-wrap: wrap;">
+      <div style="flex: 1; min-width: 320px;">
+        <div class="m-font" style="font-size: 12px; letter-spacing: 0.08em; color: #6EE7B7; text-transform: uppercase; margin-bottom: 16px;">automação fiscal · cliente</div>
+        <h2 class="h-font" style="font-size: 40px; font-weight: 700; margin: 0 0 20px; color: #F8F9FB;">Automação de NFS-e</h2>
+        <p style="font-size: 16px; line-height: 1.65; color: #C4CBC8; margin: 0 0 28px;">
+          Sistema que emite a nota fiscal de serviço eletrônica de uma clínica automaticamente a cada pagamento confirmado, substituindo o lançamento manual no Emissor Nacional de NFS-e.
+        </p>
+        <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 28px; flex-wrap: wrap;">
+          <span class="m-font" style="font-size: 13px; padding: 8px 12px; background: rgba(110,231,183,0.12); border: 1px solid rgba(110,231,183,0.3); border-radius: 8px; color: #A7F3D3;">pagamento confirmado</span>
+          <span class="m-font" style="color: #5A6660;">→</span>
+          <span class="m-font" style="font-size: 13px; padding: 8px 12px; background: rgba(110,231,183,0.12); border: 1px solid rgba(110,231,183,0.3); border-radius: 8px; color: #A7F3D3;">emissão automática</span>
+          <span class="m-font" style="color: #5A6660;">→</span>
+          <span class="m-font" style="font-size: 13px; padding: 8px 12px; background: rgba(110,231,183,0.12); border: 1px solid rgba(110,231,183,0.3); border-radius: 8px; color: #A7F3D3;">NFS-e emitida</span>
+        </div>
+        <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+          <span class="tag m-font">Python · FastAPI</span>
+          <span class="tag m-font">Integração fiscal</span>
+        </div>
+      </div>
+      <div style="flex: 1; min-width: 320px; max-width: 460px;">
+        <img class="frame" src="images/nfse-dashboard.png" alt="Painel de emissões da automação de NFS-e" style="border: 1px solid rgba(255,255,255,0.1);">
+        <div class="m-font" style="font-size: 11px; color: #7A867F; margin-top: 10px; text-align: center;">painel de emissões em tempo real — dado ilustrativo do sistema</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- HORTIFRUTI VIEIRA -->
+  <div id="hortifruti" class="panel" style="justify-content: flex-end; padding: 72px 64px;">
+    <img class="cover-img" src="images/hortifruti-hero.png" alt="">
+    <div style="position: absolute; inset: 0; background: linear-gradient(0deg, rgba(4,12,8,0.95) 0%, rgba(4,12,8,0.68) 40%, rgba(4,12,8,0.2) 70%, rgba(4,12,8,0.5) 100%);"></div>
+
+    <img class="frame inset-frame" src="images/hortifruti-unidades.png" alt="As 3 unidades do Hortifruti Vieira" style="position: absolute; top: 88px; right: 64px; width: 420px; border: 1px solid rgba(255,255,255,0.12);">
+
+    <div style="position: relative; max-width: 600px;">
+      <div class="m-font" style="font-size: 12px; letter-spacing: 0.08em; color: #9BE6A8; text-transform: uppercase; margin-bottom: 14px;">landing page · cliente</div>
+      <h2 class="h-font" style="font-size: 44px; font-weight: 700; margin: 0 0 18px; color: #F8F9FB;">Hortifruti Vieira</h2>
+      <p style="font-size: 16px; line-height: 1.65; color: #D3D9D4; margin: 0 0 28px;">
+        Página institucional para uma rede de hortifrutis com 3 unidades no Rio de Janeiro e Baixada Fluminense (Rocha Miranda, Coelho Neto e São João de Meriti), com atendimento e pedidos via WhatsApp e delivery próprio.
+      </p>
+      <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 28px;">
+        <span class="tag m-font">Landing page</span>
+        <span class="tag m-font">WhatsApp</span>
+        <span class="tag m-font">delivery</span>
+      </div>
+      <a href="https://wa.me/5521982907075" target="_blank" rel="noopener" class="cta-btn" style="background: #2E7D4F; color: #F8F9FB;">Falar com a loja ↗</a>
+    </div>
+  </div>
+
+  <!-- PADARIA LAURA -->
+  <div id="padaria" class="panel" style="justify-content: flex-end; padding: 72px 64px;">
+    <img class="cover-img" src="images/padaria-hero.png" alt="">
+    <div style="position: absolute; inset: 0; background: linear-gradient(0deg, rgba(18,3,6,0.95) 0%, rgba(18,3,6,0.68) 40%, rgba(18,3,6,0.2) 70%, rgba(18,3,6,0.5) 100%);"></div>
+
+    <img class="frame inset-frame" src="images/padaria-cardapio.png" alt="Cardápio da Padaria Laura" style="position: absolute; top: 88px; right: 64px; width: 420px; border: 1px solid rgba(255,255,255,0.12);">
+
+    <div style="position: relative; max-width: 600px;">
+      <div class="m-font" style="font-size: 12px; letter-spacing: 0.08em; color: #F3B8B8; text-transform: uppercase; margin-bottom: 14px;">landing page · cliente</div>
+      <h2 class="h-font" style="font-size: 44px; font-weight: 700; margin: 0 0 18px; color: #F8F9FB;">Padaria Laura</h2>
+      <p style="font-size: 16px; line-height: 1.65; color: #E3D6D6; margin: 0 0 28px;">
+        Site para confeitaria e padaria artesanal: cardápio navegável por categoria, kits e cestas promocionais, e pedidos direcionados para o WhatsApp — pensado para converter quem chega pelo Instagram ou Google em cliente.
+      </p>
+      <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+        <span class="tag m-font">Landing page</span>
+        <span class="tag m-font">Catálogo de produtos</span>
+        <span class="tag m-font">WhatsApp</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- STACK -->
+  <div id="stack" class="panel" style="justify-content: center; align-items: center; background: #06070A; padding: 72px 64px;">
+    <div style="max-width: 1000px; text-align: center;">
+      <div class="m-font" style="font-size: 12px; letter-spacing: 0.08em; color: #6B7480; text-transform: uppercase; margin-bottom: 22px;">stack</div>
+      <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px;">
+        <span class="m-font tag" style="color: #C7CDD6;">Java</span>
+        <span class="m-font tag" style="color: #C7CDD6;">C#</span>
+        <span class="m-font tag" style="color: #C7CDD6;">JavaScript</span>
+        <span class="m-font tag" style="color: #C7CDD6;">TypeScript</span>
+        <span class="m-font tag" style="color: #C7CDD6;">PHP</span>
+        <span class="m-font tag" style="color: #C7CDD6;">Python</span>
+        <span class="m-font tag" style="color: #C7CDD6;">Go</span>
+        <span class="m-font tag" style="color: #C7CDD6;">Spring Boot</span>
+        <span class="m-font tag" style="color: #C7CDD6;">.NET</span>
+        <span class="m-font tag" style="color: #C7CDD6;">Node.js</span>
+        <span class="m-font tag" style="color: #C7CDD6;">Express</span>
+        <span class="m-font tag" style="color: #C7CDD6;">NestJS</span>
+        <span class="m-font tag" style="color: #C7CDD6;">React.js</span>
+        <span class="m-font tag" style="color: #C7CDD6;">Next.js</span>
+        <span class="m-font tag" style="color: #C7CDD6;">React Native</span>
+        <span class="m-font tag" style="color: #C7CDD6;">SQL Server</span>
+        <span class="m-font tag" style="color: #C7CDD6;">PostgreSQL</span>
+        <span class="m-font tag" style="color: #C7CDD6;">MySQL</span>
+        <span class="m-font tag" style="color: #C7CDD6;">MongoDB</span>
+        <span class="m-font tag" style="color: #C7CDD6;">Redis</span>
+        <span class="m-font tag" style="color: #C7CDD6;">AWS</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONTACT -->
+  <div id="contato" class="panel" style="justify-content: center; align-items: center; background: #06070A; padding: 72px 64px;">
+    <div style="max-width: 640px; text-align: center;">
+      <h2 class="h-font" style="font-size: 34px; font-weight: 600; margin: 0 0 16px; color: #F8F9FB;">Vamos conversar sobre o seu projeto?</h2>
+      <p style="font-size: 15px; color: #9AA4B2; margin: 0 0 10px;">Engenharia de Software (FIAP) · Ethical Hacker (IBSEC) · pt-BR / en / es</p>
+      <p class="m-font" style="font-size: 13px; color: #6B7480; margin: 0 0 32px;">+55 (21) 9 8272-1541</p>
+      <div class="m-font" style="display: flex; gap: 24px; justify-content: center; flex-wrap: wrap; font-size: 14px; color: #C7CDD6;">
+        <a href="https://wa.me/5521982721541" target="_blank" rel="noopener">whatsapp</a>
+        <a href="mailto:iuri.dev.vonhelde@gmail.com">email</a>
+        <a href="https://www.linkedin.com/in/iuri-von-helde-082320261" target="_blank" rel="noopener">linkedin</a>
+        <a href="https://github.com/iurivonhelde6-web" target="_blank" rel="noopener">github</a>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+  (function () {
+    var canvas = document.getElementById('matrix-canvas');
+    if (!canvas || !canvas.getContext) return;
+    var ctx = canvas.getContext('2d');
+    var chars = 'アイウエオカキクケコサシスセソタチツテトナニヌネノ01アイウエオ0123456789<>/{}[]#$%';
+    var fontSize = 16;
+    var columns = 0;
+    var drops = [];
+
+    function resize() {
+      var rect = canvas.getBoundingClientRect();
+      canvas.width = rect.width;
+      canvas.height = rect.height;
+      columns = Math.max(1, Math.floor(canvas.width / fontSize));
+      drops = new Array(columns).fill(0).map(function () { return Math.floor(Math.random() * -40); });
+    }
+    resize();
+    window.addEventListener('resize', resize);
+
+    function draw() {
+      ctx.fillStyle = 'rgba(6,7,10,0.10)';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      ctx.font = fontSize + 'px monospace';
+      for (var i = 0; i < drops.length; i++) {
+        var char = chars[Math.floor(Math.random() * chars.length)];
+        var y = drops[i] * fontSize;
+        ctx.fillStyle = 'rgba(210,255,225,0.85)';
+        ctx.fillText(char, i * fontSize, y);
+        ctx.fillStyle = 'rgba(0,255,106,0.55)';
+        ctx.fillText(char, i * fontSize, y - fontSize);
+        if (y > canvas.height && Math.random() > 0.975) { drops[i] = 0; }
+        drops[i]++;
+      }
+    }
+    setInterval(draw, 55);
+  })();
+</script>
+
+</body>
+</html>
